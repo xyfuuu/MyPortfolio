@@ -17,8 +17,15 @@
  */
 function addRandomInfo() {
   const infos =
-      ["I'm student at Dalian University of Technology.", 
-       "The pronunciation of my Chinese name is similar to '复习英语'(Review English)."];
+      ["I'm a student at Dalian University of Technology.", 
+       "The pronunciation of my Chinese name is similar to '复习英语'(Review English).",
+       "Balsam pear is my favourite vegetable.",
+       "I play table tennis with my left hand, but eat with my right hand.",
+       "I am now trying to be a good setter in volleyball game.",
+       "I love stamp and postmark collecting.",
+       "Carpaccio with raw eggs tastes amazing!",
+       "Onmyoji is the best game in the world!",
+       "I'm interested in quantum information recently."];
 
   // Pick a random info.
   const info = infos[Math.floor(Math.random() * infos.length)];
