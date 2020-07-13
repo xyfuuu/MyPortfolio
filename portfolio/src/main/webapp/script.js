@@ -13,16 +13,17 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random info to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function addRandomInfo() {
+  const infos =
+      ["I'm student at Dalian University of Technology.", 
+       "The pronunciation of my Chinese name is similar to '复习英语'(Review English)."];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  // Pick a random info.
+  const info = infos[Math.floor(Math.random() * infos.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const infoContainer = document.getElementById('info-container');
+  infoContainer.innerText = info;
 }
