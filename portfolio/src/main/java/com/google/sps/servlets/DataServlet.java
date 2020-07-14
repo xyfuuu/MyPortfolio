@@ -39,6 +39,7 @@ public class DataServlet extends HttpServlet {
     }
   }
 
+  @Override
   public void init() {
     comments.add(new Comment("Alice", "Hi!"));
     comments.add(new Comment("Emily", "Hello!"));
@@ -47,7 +48,7 @@ public class DataServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Convert the server stats to JSON
+    // Convert comments ArrayList to JSON
     Gson gson = new Gson();
     String json = gson.toJson(comments);
 
