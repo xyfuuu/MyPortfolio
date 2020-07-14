@@ -34,3 +34,24 @@ function addRandomInfo() {
   const infoContainer = document.getElementById('info-container');
   infoContainer.innerText = info;
 }
+
+/**
+ * Fetches comments from the server and adds it to the DOM.
+ */
+window.onload = function() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+    const commentListElement = document.getElementById('comment-container');
+    commentListElement.innerHTML = '';
+    for(var i = 0; i < comments.length; i ++){
+      commentListElement.appendChild(
+          createListElement(comments[i].author + ': ' + comments[i].content));
+    }
+  });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
