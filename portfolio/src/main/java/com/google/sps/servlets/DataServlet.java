@@ -56,4 +56,17 @@ public class DataServlet extends HttpServlet {
     response.setContentType("application/json;");
     response.getWriter().println(json);
   }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    // Get the input from the form.
+    String author = request.getParameter("author");
+    String content = request.getParameter("content");
+
+    // Add new comment info to comments ArrayList.
+    comments.add(new Comment(author, content));
+
+    // Redirect back to the HTML page.
+    response.sendRedirect("/index.html");
+  }
 }
