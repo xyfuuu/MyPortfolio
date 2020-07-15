@@ -29,11 +29,12 @@
         </div>
         <div class="col-2">
           <form action="/data" method="POST">
-            <p>Subtract:</p>
-            <input type="text" name="author" maxlength="10">
-            <input type="text" name="content" maxlength="50">
+            <p class="lead">Add new comment</p>
+            <input type="text" name="author" maxlength="10" placeholder="Author" required>
             <br/><br/>
-            <input class="button" type="submit" />
+            <input type="text" name="content" maxlength="50" placeholder="Content" required>
+            <br/><br/>
+            <input class="button" type="submit" value="Submit"/>
           </form>
         </div>
       </div>  
