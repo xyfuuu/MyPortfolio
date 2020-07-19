@@ -2,17 +2,42 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Xinyu's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <div class="section" id="home-section">
+      <div class="background">
+        <div class="row"> 
+          <div class="col-2"> 
+            <h1>I'm Xinyu Fu</h1>  
+            <p class="lead" id="info-container">I'm a student at Dalian University of Technology.</p>
+            <button class="button" onclick="addRandomInfo()">More info</button>
+          </div>
+          <div class="col-2">
+            <img src="images/me.jpg" alt="selfies" class="img-face">
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="section" id="comment-section">
+      <div class="row"> 
+        <div class="col-2">
+          <h1>Comments</h1>
+          <div id="comment-container"></div>
+        </div>
+        <div class="col-2">
+          <form action="/data" method="POST">
+            <p class="lead">Add new comment</p>
+            <input type="text" name="author" maxlength="10" placeholder="Author" required>
+            <br/><br/>
+            <input type="text" name="content" maxlength="50" placeholder="Content" required>
+            <br/><br/>
+            <input class="button" type="submit" value="Submit"/>
+          </form>
+        </div>
+      </div>  
     </div>
   </body>
 </html>

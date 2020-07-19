@@ -13,16 +13,45 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random info to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function addRandomInfo() {
+  const infos =
+      ["I'm a student at Dalian University of Technology.", 
+       "The pronunciation of my Chinese name is similar to '复习英语'(Review English).",
+       "Balsam pear is my favourite vegetable.",
+       "I play table tennis with my left hand, but eat with my right hand.",
+       "I am now trying to be a good setter in volleyball game.",
+       "I love stamp and postmark collecting.",
+       "Carpaccio with raw eggs tastes amazing!",
+       "Onmyoji is the best game in the world!",
+       "I'm interested in quantum information recently."];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  // Pick a random info.
+  const info = infos[Math.floor(Math.random() * infos.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const infoContainer = document.getElementById('info-container');
+  infoContainer.innerText = info;
+}
+
+/**
+ * Fetches comments from the server and adds it to the DOM.
+ */
+window.onload = function() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+    const commentListElement = document.getElementById('comment-container');
+    commentListElement.innerHTML = '';
+    for(var i = 0; i < comments.length; i ++){
+      commentListElement.appendChild(
+          createListElement(comments[i].author + ': ' + comments[i].content));
+    }
+  });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
